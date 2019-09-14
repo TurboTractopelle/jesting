@@ -7,8 +7,9 @@ function App() {
   return (
     <div className="App">
      <Header />
+     <Headline header="header" desc="long desc"/>
      <main>
-      <Headline />
+      
      </main>
     </div>
   );
