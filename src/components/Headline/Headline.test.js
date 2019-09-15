@@ -1,46 +1,43 @@
-import React from "react"
-import {shallow} from "enzyme"
-import Headline from "./Headline"
+import React from "react";
+import { shallow } from "enzyme";
+import Headline from "./Headline";
 
-function findByTestAttribute(component, attr){
-    // [target=_blank]
-    // document.querySelectoAll([target=blank])
-    return component.find(`[data-test='${attr}']`)
+function findByTestAttr(component, attr) {
+  return component.find(`[data-test='${attr}']`);
 }
 
-function setup(props = {}){
-    return shallow(<Headline {...props} />)
+function setup(props = {}) {
+  return shallow(<Headline {...props} />);
 }
 
-describe('Headline', () => {
+describe("Headline", () => {
+  describe("with no props", () => {
+    let wrapper;
+    beforeAll(() => {
+      wrapper = setup();
+    });
 
-    
-    describe('with no passes props', () => {
-        let wrapper
-        beforeEach(()=>{
-            wrapper = setup()
-        })
-        it('do not display the component', ()=>{
-            expect(findByTestAttribute(wrapper, "Headerline")).toHaveLength(0)
-        })
-    })
+    it("does not display the comp", () => {
+      expect(findByTestAttr(wrapper, "Headline")).toHaveLength(0);
+    });
+  });
 
-    describe('with passed props', () => {
-let wrapper
-        beforeEach(()=>{
-            wrapper = setup({header: "my header", desc:"my desc"})
-        })
-        it("display the component", ()=>{
-            console.log(wrapper.debug())
-            expect(findByTestAttribute(wrapper, "Headline")).toHaveLength(1)
-    
-        })
+  describe("with props", () => {
+    let wrapper;
+    beforeAll(() => {
+      wrapper = setup({ header: "header", desc: "desc" });
+    });
 
+    it("does display the comp", () => {
+      expect(findByTestAttr(wrapper, "Headline")).toHaveLength(1);
+    });
 
+    it("displays the header", () => {
+      expect(findByTestAttr(wrapper, "header").text()).toBe("header");
+    });
 
-    })
-    
-
-
-
-})
+    it("displays the desc", () => {
+      expect(findByTestAttr(wrapper, "desc").text()).toBe("desc");
+    });
+  });
+});
