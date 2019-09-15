@@ -13,7 +13,7 @@ export class List extends Component {
       <Item {...itemData} key={itemData.id} />
     ));
 
-    return <div>{display}</div>;
+    return <div data-test="List">{display}</div>;
   }
 }
 
