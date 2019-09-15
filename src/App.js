@@ -19,8 +19,10 @@ export class App extends Component {
         <Header />
         <Headline header="header" desc="long desc" temp={temp} />
         <main>
-          <Button />
-          {display}
+          <div className="wrap">
+            <Button />
+            {display}
+          </div>
         </main>
       </div>
     );

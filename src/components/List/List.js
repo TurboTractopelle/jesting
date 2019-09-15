@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Item from "../Item/Item";
 
-class List extends Component {
+export class List extends Component {
   render() {
-    const { title } = this.props;
-
-    if (!title) {
+    if (!this.props.data) {
       return null;
     }
 
-    return <div></div>;
+    const display = this.props.data.map(itemData => (
+      <Item {...itemData} key={itemData.id} />
+    ));
+
+    return <div>{display}</div>;
   }
 }
 
@@ -17,4 +21,10 @@ List.propTypes = {
   title: PropTypes.string
 };
 
-export default List;
+const mapStateToProps = state => {
+  return {
+    data: state.articles.data
+  };
+};
+
+export default connect(mapStateToProps)(List);
