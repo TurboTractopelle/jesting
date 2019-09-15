@@ -5,6 +5,7 @@ import Headline from "./components/Headline/Headline";
 import Button from "./components/Button/Button";
 import { connect } from "react-redux";
 import List from "./components/List/List";
+import Localaxios from "./containers/Localaxios/Localaxios";
 
 const temp = [{ nb: 100, open: true }];
 
@@ -19,6 +20,7 @@ export class App extends Component {
         <Header />
         <Headline header="header" desc="long desc" temp={temp} />
         <main>
+          <Localaxios />
           <div className="wrap">
             <Button />
             {display}
