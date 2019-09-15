@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import "./styles.scss"
+import PropTypes from "prop-types"
+
+
 
 export default class Headline extends Component {
     render() {
@@ -17,4 +20,17 @@ export default class Headline extends Component {
             </div>
         )
     }
+}
+
+// [{nb:100, open:true}]
+
+Headline.propTypes={
+    header: PropTypes.string,
+    desc: PropTypes.string,
+    temp: PropTypes.arrayOf(PropTypes.shape({
+        nb: PropTypes.number,
+        open: PropTypes.bool
+    }
+
+    ))
 }
