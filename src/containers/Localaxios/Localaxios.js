@@ -11,7 +11,12 @@ export default class Localaxios extends Component {
       .catch(err => console.log(err));
   };
 
+  alacon = arg => "alacon";
+
   changeSomeValue = myValue => () => this.setState({ counter: myValue });
+
+  changeSomeValueWithATrick = myValue => () =>
+    this.setState({ counter: this.alacon(myValue) });
 
   render() {
     return (
@@ -25,6 +30,16 @@ export default class Localaxios extends Component {
 
         <p>
           <button onClick={this.changeSomeValue(5)} data-test="button-sync">
+            change state
+          </button>
+          {this.state.value}
+        </p>
+
+        <p>
+          <button
+            onClick={this.changeSomeValueWithATrick(5)}
+            data-test="button-sync-trick"
+          >
             change state
           </button>
           {this.state.value}

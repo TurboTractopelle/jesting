@@ -18,6 +18,18 @@ describe("", () => {
     expect(wrapper.state().counter).toBe(5);
   });
 
+  it("sync button with a trick", () => {
+    const button = findByTestAttribute(wrapper, "button-sync-trick");
+
+    wrapper.instance().alacon = jest.fn();
+    wrapper.update();
+    button.simulate("click");
+    expect(wrapper.instance().alacon).toBeCalledWith(5);
+
+    //expect(wrapper.state().counter).toBe(5);
+  });
+
+  /*
   it("clicks on async", () => {
     const button = findByTestAttribute(wrapper, "button-async");
     button.simulate("click");
@@ -25,5 +37,5 @@ describe("", () => {
     jest.mock("axios");
     console.log(button.debug());
     expect(2).toBe(1);
-  });
+  });*/
 });
