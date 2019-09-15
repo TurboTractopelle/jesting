@@ -20,7 +20,7 @@ describe("List", () => {
 
   describe("does display with data", () => {
     let wrapper;
-    const data = [{ id: 1, title: "title", text: "text" }];
+    const data = [{ id: 1, title: "title", body: "text" }];
     beforeAll(() => (wrapper = setup({ data })));
 
     it("works", () => {

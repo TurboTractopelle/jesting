@@ -6,7 +6,7 @@ const Item = props => {
   return (
     <div className="Item">
       <h2>{props.title}</h2>
-      <p>{props.text}</p>
+      <p>{props.body}</p>
     </div>
   );
 };
@@ -15,5 +15,5 @@ export default Item;
 
 Item.propTypes = {
   title: PropTypes.string,
-  text: PropTypes.string
+  body: PropTypes.string
 };
