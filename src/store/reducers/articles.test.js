@@ -8,11 +8,12 @@ describe("articles reducer", () => {
     expect(newState).toEqual({ data: [], loading: false, error: false });
   });
 
+  /*
   it("starts loading when start to fetch", () => {
     const newState = articlesReducer(undefined, action.fetch());
     expect(newState.loading).toBe(true);
   });
-
+*/
   it("saves data on success", () => {
     const data = [{ title: 1 }, { title: 2 }];
     const actionFetchSuccess = { type: actionTypes.FETCH_SUCCESS, data };

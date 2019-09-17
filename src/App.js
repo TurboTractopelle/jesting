@@ -6,6 +6,7 @@ import Button from "./components/Button/Button";
 import { connect } from "react-redux";
 import List from "./components/List/List";
 import Localaxios from "./containers/Localaxios/Localaxios";
+import Encore from "./containers/encoreUneFois/Encore";
 
 const temp = [{ nb: 100, open: true }];
 
@@ -23,6 +24,8 @@ export class App extends Component {
           <Localaxios />
           <div className="wrap">
             <Button />
+
+            <Encore />
             {display}
           </div>
         </main>
