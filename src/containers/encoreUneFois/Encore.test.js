@@ -35,10 +35,11 @@ describe("Encore", () => {
     button.simulate("click");
     expect(wrapper.state().value).toBe("MOCKED topmodule");
   });
-
+  /*
   it("using mod prom", () => {
     const button = findByTestAttribute(wrapper, "clickMethProm");
     button.simulate("click");
-    expect(wrapper.state().value).toBe("MOCKED topmodule");
-  });
+    setTimeout(() => "lol", 2000);
+    return expect(wrapper.state().value).toBe("MOCKED promise");
+  });*/
 });

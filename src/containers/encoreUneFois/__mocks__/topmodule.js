@@ -4,10 +4,7 @@ class topmodule {
   }
 
   static magieProm(stuff) {
-    return Promise.resolve("gg");
-    /*return new Promise((res, err) => {
-      res("MOCKED chose promise");
-    });*/
+    return Promise.resolve("MOCKED promise");
   }
 }
 

@@ -1,10 +1,8 @@
 import { findByTestAttribute } from "../../../utils/testingUtils";
-import Localaxios from "../Localaxios/Localaxios";
+import Localaxios from "./Localaxios";
 import { shallow } from "enzyme";
 import React from "react";
 import mymod from "./mymod";
-
-jest.mock("./mymod");
 
 let setup = (props = {}) => shallow(<Localaxios {...props} />);
 
@@ -33,9 +31,11 @@ describe("", () => {
 
   it("sync button with module dep", () => {
     const button = findByTestAttribute(wrapper, "button-sync-trick-mod");
-    jest.mock("./mymod");
+
+    const addMock = jest.spyOn(mymod, "magie");
     button.simulate("click");
-    expect(wrapper.state().counter).toBe("mooooooocked");
+    //expect(wrapper.state().counter).toBe("mooooooocked");
+    expect(addMock).toBeCalledWith(6);
   });
 
   /*

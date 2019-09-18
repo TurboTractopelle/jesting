@@ -6,7 +6,7 @@ class topmodule {
   static magieProm(stuff) {
     return new Promise((res, err) => {
       setTimeout(() => {
-        res("chose promise");
+        res("promise");
       }, 1000);
     });
   }

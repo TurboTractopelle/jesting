@@ -9,8 +9,7 @@ class Encore extends Component {
   clickMethDep = val => () => this.setState({ value: this.myMeth(val) });
   myMeth = val => val + 1;
 
-  clickMethMod = val => async () =>
-    this.setState({ value: await topmodule.magie(val) });
+  clickMethMod = val => () => this.setState({ value: topmodule.magie(val) });
 
   clickMethProm = val => async () =>
     this.setState({ value: await topmodule.magieProm(val) });
